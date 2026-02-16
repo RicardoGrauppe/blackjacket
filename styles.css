@@ -20,6 +20,7 @@ body {
   font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
   background: linear-gradient(135deg, #1a1a1a 0%, #2d1519 50%, #1a1a1a 100%);
   min-height: 100vh;
+  height: 100vh;
   color: var(--white);
   line-height: 1.5;
   display: flex;
@@ -28,16 +29,21 @@ body {
 }
 
 .container {
-  max-width: 1400px;
+  max-width: 100%;
   width: 100%;
-  padding: 2rem;
+  height: 100%;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
 }
 
 .page-title {
   text-align: center;
   font-size: 2.5rem;
   font-weight: 700;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
+  flex-shrink: 0;
   color: var(--white);
   text-shadow: 0 0 20px var(--shadow);
 }
@@ -46,13 +52,18 @@ body {
   display: flex;
   gap: 3rem;
   align-items: stretch;
+  flex: 1;
+  min-height: 0;
   flex-wrap: wrap;
 }
 
 /* Grid 4x3 de cards */
 .grid-section {
   flex: 1;
-  min-width: 600px;
+  min-width: 500px;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
 }
 
 .cards-grid {
@@ -60,6 +71,8 @@ body {
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(3, 1fr);
   gap: 1rem;
+  flex: 1;
+  min-height: 400px;
 }
 
 .card {
@@ -103,8 +116,9 @@ body {
 /* Seção do QR Code - mesma altura do grid 4x3 */
 .qr-section {
   flex-shrink: 0;
-  width: 280px;
+  width: 420px;
   display: flex;
+  min-height: 400px;
 }
 
 .qr-box {
@@ -135,8 +149,8 @@ body {
 }
 
 .qr-code {
-  width: 160px;
-  height: 160px;
+  width: 340px;
+  height: 340px;
   object-fit: contain;
 }
 
